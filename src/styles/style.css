@@ -1,0 +1,240 @@
+*{
+  margin : 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(9,0,77,0.65), rgba(9,0,77,0.65)), url(../images/predio.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10px 8%;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 180px;
+  cursor: pointer;
+}
+p {
+  font-size: 20px;
+}
+label {
+  color: white;
+}
+
+.metrica {
+
+  margin: 1px;
+
+    display: inline-block;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 1px solid white;
+
+    border-radius: 20%;
+
+    text-align: center;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s; /* Adicione uma transição suave para a cor de fundo */
+
+  }
+ 
+  /* Estilo de hover para valores de 1 a 6 (vermelho) */
+
+  .metrica:nth-child(-n+9):hover {
+
+    background-color: #D62027; /* Vermelho */
+
+    color: #fff; /* Cor do texto quando o mouse passa por cima */
+
+  }
+ 
+  /* Estilo de hover para valores de 7 e 8 (amarelo) */
+
+  .metrica:nth-child(n+10):nth-child(-n+11):hover {
+
+    background-color: #FDBA07; /* Amarelo */
+
+    color: #000; /* Cor do texto quando o mouse passa por cima */
+
+  }
+ 
+  /* Estilo de hover para valores de 9 a 10 (verde) */
+
+  .metrica:nth-child(n+12):hover {
+
+    background-color: #64B64D; /* Verde */
+
+    color: #fff; /* Cor do texto quando o mouse passa por cima */
+
+  }
+ 
+.metrica.selected {
+
+  background-color: #FF7F00;
+
+  color: #fff;
+
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+h4, p {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #FF7F00;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+ textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+.saudacao {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+  .center-label {
+
+      margin-left: 100px; 
+
+      display: flex;
+
+  }
+ 
+}
+ 
+/* Divisão das métricas para telas menores que 768px */
+
+@media (max-width: 768px) {
+
+  .metrica {
+
+    width: 40px; /* Aumenta o tamanho das métricas */
+
+    margin: 1px;
+  }
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+.checkText, .checkDiv {
+  margin-top: 5px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 25px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid white;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox::before {
+  font-family: "Quicksand", sans-serif;
+  position: absolute;
+  bottom: -4px;
+  left: 1px;
+  content: "✔";
+  font-size: 40px;
+  color: rgb(255, 153, 0);
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox:checked::before {
+  animation: zoom 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1.5);
+  }
+
+  40% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  90% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

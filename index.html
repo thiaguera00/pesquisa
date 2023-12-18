@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <nav>
+            <img src="src/images/logo.png" class="logo">
+        </nav>
+        <div class="saudacao">
+            <p>Avalie sua experiência com a </p>
+        </div>
+        <form action="src/formsPesquisa.php" method="POST">
+            <div class="m-5 d-flex animado" style="display: flex!important; flex-wrap: wrap; justify-content: center;">
+            <input type="hidden" id="valorSelecionado" name="valorSelecionado">
+            <input type="hidden" id="valorSelecionado" name="uuid" value="">
+              <label class="metrica" onclick="selectOption(this, 0)">0</label>
+              <label class="metrica" onclick="selectOption(this, 1)">1</label>
+              <label class="metrica" onclick="selectOption(this, 2)">2</label>
+              <label class="metrica" onclick="selectOption(this, 3)">3</label>
+              <label class="metrica" onclick="selectOption(this, 4)">4</label>
+              <label class="metrica" onclick="selectOption(this, 5)">5</label>
+              <label class="metrica" onclick="selectOption(this, 6)">6</label>
+              <label class="metrica" onclick="selectOption(this, 7)">7</label>
+              <label class="metrica" onclick="selectOption(this, 8)">8</label>
+              <label class="metrica" onclick="selectOption(this, 9)">9</label>
+              <label class="metrica" onclick="selectOption(this, 10)">10</label>
+            </div>
+            
+            <div class="content">
+     
+                <div id="promotores" style="display: none;">
+                  <h4 class=>Por favor selecione as opções abaixo para avaliar a pesquisa</h4>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao1Promotores" value="Facilidade de acesso aos canais de comunicação">
+                  <label class="checkText">Facilidade de acesso aos canais de comunicação</label>
+                </div>
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao2Promotores" value="Fácil acesso às informações nos aplicativos/site">
+                  <label class="checkText">Fácil acesso às informações nos aplicativos/site</label>
+                </div>
+              
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao3Promotores" value="Recebeu status de sua solicitação">
+                  <label class="checkText">Recebeu status de sua solicitação</label>
+                </div>
+              
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao4Promotores" value="Sua solicitação foi atendida">
+                  <label class="checkText">Sua solicitação foi atendida</label>
+                </div>
+              
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcaoOutroPromotores" value="Outros" id="outroCheckboxPromotores">
+                  <label class="checkText">Outro</label>
+                  <div class="form-floating mt-5" style="width: 60%; height: auto">
+                    <textarea class="" name="outroTextoPromotores" id="outroTextareaPromotores" cols="30" rows="10" style="display: none;"></textarea>
+                  </div>
+                </div>
+                <div class="btn">
+                  <button>Enviar</button>
+                </div>
+              </div>
+              
+              <div id="detratores" style="display: none;">
+              <h4 class="">Por favor selecione as opções abaixo para avaliar a pesquisa</h4>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao1Detratores" value="Demora na análise da solicitação">
+                  <label class="checkText">Demora na análise da solicitação</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao2Detratores" value="Ausência de clareza das informações recebidas">
+                  <label class="checkText">Ausência de clareza das informações recebidas </label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao3Detratores" value="Muito esforço para envio de documentos">
+                  <label class="checkText">Muito esforço para envio de documentos</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao4Detratores" value="Dificuldade de acessos aos canais de comunicações">
+                  <label class="checkText">Dificuldade de acessos aos canais de comunicações</label>
+                </div>
+                
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao5Detratores" value="A solicitação não foi atendida.">
+                  <label class="checkText">A solicitação não foi atendida.</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="outroOpcaoDetratores" value="Outros" id="outroCheckboxDetratores">
+                  <label class="checkText">Outro</label>
+                  <div class="checkDiv" style="width: 60%;">
+                    <textarea class="" name="outroTextoDetratores" id="outroTextareaDetratores" cols="30" rows="10" style="display: none;"></textarea>
+                  </div>
+                </div>
+            
+                <div class="btn">
+                  <button>Enviar</button>
+                </div>
+              </div>
+              
+              <div id="neutros" style="display: none;">
+              <h4 class="">Por favor selecione as opções abaixo para avaliar a pesquisa</h4>
+                <div  class="">
+                  <input class="checkbox" type="checkbox" name="opcao1Neutros" value="Facilidade de acesso aos canais de comunicação">
+                  <label class="checkText">Facilidade de acesso aos canais de comunicação</label>
+                </div>
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao2Neutros" value="Fácil acesso ás informações nos aplicativos/site">
+                  <label class="checkText">Fácil acesso ás informações nos aplicativos/site</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao3Neutros" value="Recebeu status de sua solicitação">
+                  <label class="checkText">Recebeu status de sua solicitação</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao4Neutros" value="Sua solicitação foi atendida">
+                  <label class="checkText">Sua solicitação foi atendida</label>
+                </div>
+                
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao5Neutros" value="Demora na análise da solicitação">
+                  <label class="checkText">Demora na análise da solicitação</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao6Neutros" value="Ausência de clareza das informações recebidas">
+                  <label class="checkText">Ausência de clareza das informações recebidas</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao7Neutros" value="Muito esforço para envio de documentos">
+                  <label class="checkText"> Muito esforço para envio de documentos</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao8Neutros" value="Dificuldade de acessos aos canais de comunicações">
+                  <label class="checkText"> Dificuldade de acessos aos canais de comunicações</label>
+                </div>
+            
+                <div class="checkDiv">
+                  <input class="checkbox" type="checkbox" name="opcao9Neutros" value="A solicitação não foi atendida.">
+                  <label class="checkText"> A solicitação não foi atendida.</label>
+                </div>
+            
+                <div class="checkDiv">
+                    <input class="checkbox" type="checkbox" name="outroOpcaoNeutros" value="Outros" id="outroCheckboxNeutros">
+                    <label class="checkText">Outro</label>
+                    <div class="checkDiv" style="width: 60%;">
+                        <textarea class="" name="outroTextoNeutros" id="outroTextareaNeutros" cols="30" rows="10" style="display: none;"></textarea>
+                    </div>
+                </div>
+            
+                <div class="btn">
+                  <button>Enviar</button>
+                </div>
+              </div>
+            </div>
+            </form> 
+
+    </div>
+    <script>
+        let selectedLabel = null;
+
+const outroCheckboxPromotores = document.getElementById("outroCheckboxPromotores");
+const outroTextareaPromotores = document.getElementById("outroTextareaPromotores");
+const outroCheckboxNeutros = document.getElementById("outroCheckboxNeutros");
+const outroTextareaNeutros = document.getElementById("outroTextareaNeutros");
+const outroCheckboxDetratores = document.getElementById("outroCheckboxDetratores");
+const outroTextareaDetratores = document.getElementById("outroTextareaDetratores");
+
+
+
+outroCheckboxPromotores.addEventListener("change", function() {
+  if (outroCheckboxPromotores.checked) {
+    outroTextareaPromotores.style.display = "block";
+  } else {
+    outroTextareaPromotores.style.display = "none";
+  }
+});
+
+outroCheckboxNeutros.addEventListener("change", function() {
+  if (outroCheckboxNeutros.checked) {
+    outroTextareaNeutros.style.display = "block";
+  } else {
+    outroTextareaNeutros.style.display = "none";
+  }
+});
+
+outroCheckboxDetratores.addEventListener("change", function() {
+  if (outroCheckboxDetratores.checked) {
+    outroTextareaDetratores.style.display = "block";
+  } else {
+    outroTextareaDetratores.style.display = "none";
+  }
+});
+
+
+function selectOption(label, value) {
+  if (selectedLabel) {
+    selectedLabel.classList.remove('selected');
+  }
+  
+  label.classList.add('selected');
+  selectedLabel = label;
+
+ 
+  document.getElementById('promotores').style.display = 'none';
+  document.getElementById('neutros').style.display = 'none';
+  document.getElementById('detratores').style.display = 'none';
+  document.getElementById('valorSelecionado').value = value;
+  // Mostrar opções com base no valor selecionado
+  if (value >= 0 && value <= 6) {
+    document.getElementById('detratores').style.display = 'block';
+  } else if (value === 7 || value === 8) {
+    document.getElementById('neutros').style.display = 'block';
+  } else if (value >= 9 && value <= 10) {
+    document.getElementById('promotores').style.display = 'block';
+  }
+}
+
+    </script>
+</body>
+</html>
