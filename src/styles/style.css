@@ -5,19 +5,23 @@
   box-sizing: border-box;
 }
 
-.container {
+body {
+  background-image: linear-gradient(rgba(9,0,77,0.65), rgba(9,0,77,0.65)), url(../images/predio.jpg);
+  background-size: cover;
+  background-position: center;
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(255,130,1,1), rgba(80,85,89,1)); 
+  display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
-body {
+.saudacao, .experiencia {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  margin: 18px;
 }
+
 
 p {
   font-size: 20px;
@@ -137,12 +141,6 @@ button:hover {
   border: 1px solid rgb(219, 213, 213);
 }
 
-.saudacao {
-  margin-top: 100px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-}
 
 @media (max-width: 768px) {
 
